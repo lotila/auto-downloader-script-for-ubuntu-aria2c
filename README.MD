@@ -9,5 +9,5 @@ Runs in Ubuntu with aria2c.
 Command blocks other terminal use and should be run in its own shell.
 
 ```
-while true; do files=*.torrent; aria2c --seed-time $((60*24)) --max-concurrent-downloads=100 $files; rm $files; sleep 60m; done;
+while true; do files=*.magnet; aria2c --bt-metadata-only=true --bt-save-metadata=true <$files; rm $files; files=*.torrent; aria2c --seed-time $((60*24)) --max-concurrent-downloads=100 $files; rm $files; sleep 60m; done;
 ```
