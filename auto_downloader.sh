@@ -1,13 +1,23 @@
 
 while true; do 
 
-aria2c --seed-time $((60*24)) --max-concurrent-downloads=100 $(<*.magnet); 
+cd=100;
 
-aria2c --seed-time $((60*24)) --max-concurrent-downloads=100 *.torrent; 
+aria2c --seed-time $((60*24)) --max-concurrent-downloads=$cd $(<*.URI); 
+
+aria2c --seed-time $((60*24)) --max-concurrent-downloads=$cd $(<*.metalink); 
+
+aria2c --seed-time $((60*24)) --max-concurrent-downloads=$cd $(<*.magnet); 
+
+aria2c --seed-time $((60*24)) --max-concurrent-downloads=$cd *.torrent; 
 
 rm *.torrent; 
 
 rm *.magnet; 
+
+rm *.URI;
+
+rm *.metalink;
 
 sleep 60m; 
 
