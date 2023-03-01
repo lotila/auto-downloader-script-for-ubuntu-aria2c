@@ -3,9 +3,9 @@ while true; do
 
 cd=100;
 
-aria2c --seed-time $((60*24)) --max-concurrent-downloads=$cd $(<*.URI); 
+aria2c --max-concurrent-downloads=$cd $(<*.URI); 
 
-aria2c --seed-time $((60*24)) --max-concurrent-downloads=$cd $(<*.metalink); 
+aria2c --max-concurrent-downloads=$cd $(<*.metalink); 
 
 aria2c --seed-time $((60*24)) --max-concurrent-downloads=$cd $(<*.magnet); 
 
