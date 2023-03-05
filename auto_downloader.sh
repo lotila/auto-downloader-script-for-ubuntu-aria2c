@@ -1,7 +1,7 @@
 
 while true; do 
 
-cd=100;
+cd=10;
 
 aria2c --max-concurrent-downloads=$cd $(<*.URI); 
 
@@ -19,6 +19,8 @@ rm *.URI;
 
 rm *.metalink;
 
-sleep 60m; 
+sleep 24h; 
+
+chown -R tomi:tomi /media/tomi;
 
 done;
